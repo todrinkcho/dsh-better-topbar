@@ -1,0 +1,59 @@
+{
+  "name": "@todrink/dsh-better-topbar",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Move the sidebar's top entries (home / plugins / project folders / automation / more / settings / account) into a horizontal strip on the window's top row, and hide the DSH brand mark so the sidebar carries only workspaces.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.2.2-rc.5"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "topbar",
+    "navigation",
+    "sidebar",
+    "ui",
+    "layout"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "todrink",
+    "url": "https://github.com/todrinkcho"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/todrinkcho/dsh-better-topbar.git"
+  },
+  "homepage": "https://github.com/todrinkcho/dsh-better-topbar#readme",
+  "bugs": {
+    "url": "https://github.com/todrinkcho/dsh-better-topbar/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
