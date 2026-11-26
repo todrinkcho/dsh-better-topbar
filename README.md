@@ -45,13 +45,13 @@
 
 ## 验证
 
-- `node --check`；`tools/verify-client.cjs` 断言 glyph 网格/描边、mask URL、中英分类、chip 几何（`INSET=14`、入口在 `+32`）、关键 selector、无死 token、不得出现 `data-tbn-toggle`。
-- **真浏览器复测（web profile，同一套 UI 代码）**：`tools/measure-web.mjs` 量到 home `(14,6,28,28)`、入口 `46 / 78 / 110 / 142`、`--tbn-pad=40`，`::before` 的 mask 与 `background-color: rgb(97,102,107)` 都在。
+- `node --check` 通过；另外用一份本地校验脚本（未随仓库发布）断言 glyph 网格/描边、mask URL、中英分类、chip 几何（`INSET=14`、入口在 `+32`）、关键 selector、无死 token、不得出现 `data-tbn-toggle`。
+- 真浏览器复测：量到 home `(14,6,28,28)`、入口 `46 / 78 / 110 / 142`、`--tbn-pad=40`，`::before` 的 mask 与 `background-color: rgb(97,102,107)` 都在。
 - 桌面端真机截图（UIA 量）：收起按钮 `(12,6,28,28)`，图标行在 `y=46`。
 
 ## 生效方式（重要）
 
-**改完 `client.js` 后，桌面端的窗口必须重启 DSH 才能加载新模块。** 本版 DSH 的 client-hmr 会重建并下发新文件，但不会把这个已经挂载的客户端模块重新执行一遍；桌面壳也没有绑定 Ctrl+R / F5。开发时用 `dsh web --port 6011 --no-open` 起一个 web 实例 + `tools/measure-web.mjs` 验证几何，再重启桌面端看最终效果。
+**改完 `client.js` 后，桌面端的窗口必须重启 DSH 才能加载新模块。** 本版 DSH 的 client-hmr 会重建并下发新文件，但不会把这个已经挂载的客户端模块重新执行一遍；桌面壳也没有绑定 Ctrl+R / F5。开发时用 `dsh web --port 6011 --no-open` 起一个 web 实例看效果，再重启桌面端确认。
 
 ## 已知坑
 

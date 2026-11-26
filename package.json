@@ -1,6 +1,6 @@
 {
   "name": "@todrink/dsh-better-topbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Move the sidebar's top entries (home / plugins / project folders / automation / more / settings / account) into a horizontal strip on the window's top row, and hide the DSH brand mark so the sidebar carries only workspaces.",
   "exports": {
