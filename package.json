@@ -55,5 +55,9 @@
       "immediately": true,
       "inject": []
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
